@@ -191,7 +191,7 @@ Orange points: Spatial Skyline points.
 ![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh28.png)
 Dataset of 5 query points.
 
-[![](![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh29.png))](![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/visualize.mp4))
+[![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh29.png)](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/visualize.mp4)
 
 # To run this project
 - Use anaconda to create python environment:
