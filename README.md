@@ -67,7 +67,7 @@ Note that:
 
 ### Theories.
 
-We use lemma (1) and two theorems $(1 \& 3)$ to identify definite skyline points and theorem (2) to eliminate query points not contributing to the search.
+We use lemma (1) and two theorems 1 and 3 to identify definite skyline points and theorem (2) to eliminate query points not contributing to the search.
 
 - **Lemma 1**: For each $q_i \in Q$, the *closest* point to $q_i$ in P is a skyline point.
 - **Theorem 1**: Any point $p \in P$ which is *inside* the convex hull of Q is a skyline point.	
