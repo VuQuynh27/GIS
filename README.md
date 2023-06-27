@@ -43,7 +43,7 @@ Assume that:
 ## Theoretical Foundation
 ### Concept of Voronoi Diagram, Delaunay Graph, and Convex Hull.
 #### Voronoi Diagram Definition:
-![](Image\Anh4.png)
+![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh4.png)
 
 - **P** = ${p_1, p_2,..., p_n}$: set of n distinct points in d-dimensional Euclidean space. 
 - **Voronoi diagram of P**: the subdivision of the Euclidean space into n cells, one for each point in P. The cell corresponding to the point $p \in P$ (denoted by **VC(p)**) contains all the points $x \in \mathbb{R}^d$ s.t $\forall p' \in P, p' \neq p, D(x, p) \leq D(x, p')$.
@@ -55,12 +55,12 @@ Note that:
 - Each *Voronoi edge* of the point p refers to the corresponding point in the set P as a **Voronoi neighbor** of p.
 
 #### Delaunay Triangulation and Delaunay Graph Definition.
-![](Image\Anh5.png)
+![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh5.png)
 - **Delaunay Triangulation** is a triangulation of a set of points P such that *the circumcircle of each triangle* contains no other points in its interior.
 - It *maximizes* the *minimum angle* of the triangles and *minimizes* the *maximum circumradius* of the triangles.
 - The **Delaunay Graph** can be obtained from the Delaunay Triangulation. 
 #### Convex Hull Definition.
-![](Image\Anh8.png)
+![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh8.png)
 - The **Convex Hull (CH(P))** of points in $P \subset \mathbb{R}^d$, is the unique smallest *convex polytope* (polygon when d = 2) which contains all the points in P.
 - $CH_v(P)$ is the set of CH(P)'s vertices, called *convex points*. All other points in P are *non-convex points*.
 - The shape of the Convex Hull of a set P only depends on the *convex points* in P.
@@ -71,12 +71,12 @@ We use lemma (1) and two theorems 1 and 3 to identify definite skyline points an
 
 - **Lemma 1**: For each $q_i \in Q$, the *closest* point to $q_i$ in P is a skyline point.
 - **Theorem 1**: Any point $p \in P$ which is *inside* the convex hull of Q is a skyline point.	
-![](Image\Anh9.png)
+![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh9.png)
 - **Lemma 2**: Given two query sets $Q' \subset Q$, if a point $p \in P$ is a skyline point with respect to Q', then p is also a skyline point with respect to Q.
 - **Theorem 2**: The set of skyline points of P does \textit{not depend} on any *non-convex* query point $q \in Q$.
-![](Image\Anh10.png)
+![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh10.png)
 - **Theorem 3**: Any point $p \in P$ whose Voronoi cell V C(p) *intersects* with the boundaries of convex hull of Q is a skyline point.
-![](Image\Anh11.png)
+![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh11.png)
 
 ## Solutions
 ### Static Queries
@@ -93,7 +93,8 @@ Steps:
 - Step 2: traverse the R-tree and maintaining the *minheap* H sorted based on the mindist values of the visited nodes.
   
 For example:
-![](Image\Anh12.png) ![](Image\Anh13.png)
+![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh12.png)
+![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh13.png)
 
 
 #### Voronoi-based Spatial Skyline Algorithm ($VS^2$).
@@ -112,8 +113,8 @@ Steps:
 -  Return the skyline points when the heap becomes empty.
 
 For example:
-![](Image\Anh17.png)
-![](Image\Anh18.png)
+![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh17.png)
+![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh18.png)
 ### Continuous Queries
 What happens whenm**query points** change their locations? 
 -  Recompute spatial skyline points.
@@ -132,7 +133,7 @@ Assume that:
  -  **Lemma 5**: The locus of data points whose dominance depends on $q \in CH_v(Q)$ is the visible region of q.
 
 For example:
-![](Image\Anh20.png)
+![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh20.png)
 $\rightarrow$ $CH_v^+(Q) = \{q_1, q_2, q_3\}$ and $CH^-_v(Q) = \{q_4\}$. 
 #### Voronoi-based Continuous SSQ ($VCS^2$).
 Assume that:
@@ -151,10 +152,10 @@ Assume that:
 
 **Case 1: Situations where VCS2 *updates* the skyline based on the change in CH(Q’)**.
 
-![](Image\Anh21.png)
+![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh21.png)
 
 **Pattern I**: CH(Q) and CH(q’) are identical, the skyline does not change and no graph traversal is required. (Theorem 2)
-![](Image\Anh22.png)
+![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh22.png)
 
 **Patterns II-V**: The intersection region of CH(Q) and CH(Q’) skyline points to both Q and Q’, no traversal needed.
 
@@ -167,30 +168,30 @@ have become smaller $\rightarrow$ might be skyline points and must *be examined*
 
 For example:
 ![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh24.png)
-![](Image\Anh25.png)
+![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh25.png)
 
 ## Experiment
 ### Branch-and-Bound Spatial Skyline Algorithm ($B^2S^2$).
-![](Image\Anh26.png)
+![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh26.png)
 Dataset of 5 query points.
 
-![](Image\Anh30.png)
+![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh30.png)
 Green polygon: convex hull of Q. <br>
 Yellow points: locations of restaurant (OpenStreetMap). <br>
 Black points: Spatial Skyline points.
 ### Voronoi-based Spatial Skyline Algorithm ($VS^2$).
-![](Image\Anh26.png)
+![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh26.png)
 Dataset of 5 query points.
 
-![](Image\Anh27.png)
+![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh27.png)
 Green polygon: convex hull of Q. <br>
 Yellow points: locations of restaurant (OpenStreetMap). <br>
 Orange points: Spatial Skyline points.
 ### Voronoi-based Continuous SSQ ($VCS^2$).
-![](Image\Anh28.png)
+![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh28.png)
 Dataset of 5 query points.
 
-[![](Image\Anh29.png)](Image\visualize.mp4 "Link Title")
+[![](![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh29.png))](![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/visualize.mp4))
 
 # To run this project
 - Use anaconda to create python environment:
