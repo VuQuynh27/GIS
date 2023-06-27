@@ -82,7 +82,6 @@ We use lemma (1) and two theorems 1 and 3 to identify definite skyline points an
 ### Static Queries
 #### Branch-and-Bound Spatial Skyline Algorithm ($B^2S^2$).
 Asume that:
-
 - The data points are indexed by a data-partitioning method such as R-tree.
 - mindist(p, A): be the sum of distances between p and the
 points in the set A ($\Sigma _{q \in A} D(p, q)$).
@@ -137,7 +136,6 @@ For example:
 $\rightarrow$ $CH_v^+(Q) = \{q_1, q_2, q_3\}$ and $CH^-_v(Q) = \{q_4\}$. 
 #### Voronoi-based Continuous SSQ ($VCS^2$).
 Assume that:
-
 -  q’ :new location of q 
 -  Q’ = $Q\cup \{q’\}- \{q\}$ new set of query locations.
 
@@ -168,7 +166,7 @@ have become smaller $\rightarrow$ might be skyline points and must *be examined*
 -  **Unlabeled white region**: points outside of the visible regions of both q and q’ $\rightarrow$ remain the same. (Lemma 5)
 
 For example:
-![](Image\Anh24.png)
+![](https://raw.githubusercontent.com/VuQuynh27/GIS/master/Image/Anh24.png)
 ![](Image\Anh25.png)
 
 ## Experiment
