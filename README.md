@@ -203,3 +203,5 @@ Dataset of 5 query points.
     pip install -r requirements.txt
 - Extract spatial data from openstreetmap.org.
 - Visualize on Qgis.
+## Citation
+[Mehdi Sharifzadeh and Cyrus Shahabi. The Spatial Skyline Queries.]
